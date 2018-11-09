@@ -14,7 +14,7 @@ node {
       }
         stage(' deploy to tomcat server'){
 		steps{
-           bat move "F:\apache-tomcat-7.0.82\webapps\hello-world.war" "F:\apachebackup\hello-world-%date%.war"
+           bat move F:\apache-tomcat-7.0.82\webapps\hello-world.war F:\apachebackup\hello-world-%date%.war
 		bat timeout 15
 		bat Xcopy C:\Users\sgp\.jenkins\workspace\hello-world_pipeline\target\hello-world.war F:\apache-tomcat-7.0.82\webapps
 		}
