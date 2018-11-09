@@ -15,7 +15,7 @@ node {
         stage(' deploy to tomcat server'){
 		
                 bat 'move "F:\\apache-tomcat-7.0.82\\webapps\\hello-world.war" "F:\\apachebackup\\hello-world-%date:~10,4%%date:~7,2%%date:~4,2%-%time:~0,2%%time:~3,2%.war"'
-	        bat 'waitfor SomethingThatIsNeverHappening /t 15 2>NUL'
+		sleep 10
 		bat 'Xcopy C:\\Users\\sgp\\.jenkins\\workspace\\hello-world_pipeline\\target\\hello-world.war F:\\apache-tomcat-7.0.82\\webapps'
 		
         }
